@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//home/denver/Videos/**)",
+      "Bash(python3 -c \"import playwright; print\\(''playwright ok''\\)\")",
+      "Bash(python3 -c \"import selenium; print\\(''selenium ok''\\)\")",
+      "Bash(python3 -c \"import PIL; print\\(''PIL ok''\\)\")",
+      "Bash(python3 -c \"import cv2; print\\(''cv2 ok''\\)\")",
+      "Bash(chromium-browser --version)",
+      "Bash(/snap/bin/chromium --version)",
+      "Bash(pip3 show:*)",
+      "Bash(python3 run_test.py)",
+      "Read(//home/denver/.cache/ms-playwright/**)",
+      "Bash(python3 -c \"from playwright.sync_api import sync_playwright; p = sync_playwright\\(\\).start\\(\\); print\\(p.chromium.executable_path\\)\")"
+    ]
+  }
+}

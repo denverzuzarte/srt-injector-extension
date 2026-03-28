@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      width: 260px;
+      background: #1a1a2e;
+      color: #e0e0e0;
+      padding: 16px;
+    }
+    h2 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #00cfff;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    h2 svg { flex-shrink: 0; }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 6px;
+      border: none;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.15s, transform 0.1s;
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+    .btn-primary {
+      background: #00cfff;
+      color: #000;
+    }
+    .btn-danger {
+      background: #ff4d4d;
+      color: #fff;
+      margin-top: 8px;
+    }
+    .btn-primary:hover:not(:disabled) { opacity: 0.85; }
+    .btn-danger:hover:not(:disabled)  { opacity: 0.85; }
+    .btn-load {
+      background: #22c55e;
+      color: #000;
+      margin-top: 8px;
+    }
+    .btn-load:hover { opacity: 0.85; }
+    .status {
+      font-size: 12px;
+      margin-top: 12px;
+      padding: 8px 10px;
+      border-radius: 5px;
+      background: #0d0d1a;
+      border-left: 3px solid #444;
+      color: #aaa;
+      min-height: 36px;
+      line-height: 1.5;
+    }
+    .status.ok   { border-color: #00cfff; color: #00cfff; }
+    .status.err  { border-color: #ff4d4d; color: #ff9999; }
+    .status.warn { border-color: #ffc107; color: #ffc107; }
+    #fileInput { display: none; }
+    .hint {
+      font-size: 11px;
+      color: #666;
+      margin-top: 10px;
+      text-align: center;
+    }
+    .divider {
+      border: none;
+      border-top: 1px solid #2a2a3e;
+      margin: 12px 0;
+    }
+  </style>
+</head>
+<body>
+  <h2>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00cfff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="4" width="20" height="16" rx="3"/>
+      <path d="M7 15h3M12 15h5M7 11h5M14 11h3"/>
+    </svg>
+    SRT Injector
+  </h2>
+
+  <button class="btn btn-primary" id="btnSelect">📹 Click a video to target</button>
+  <button class="btn btn-load" id="btnLoad" hidden>📂 Load SRT file</button>
+  <hr class="divider">
+  <button class="btn btn-danger" id="btnDetach" disabled>✕ Remove subtitles</button>
+
+  <div class="status" id="status">Click the button, then click any video on the page.</div>
+  <p class="hint">Press Esc to cancel selection</p>
+
+  <script src="popup.js"></script>
+</body>
+</html>
