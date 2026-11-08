@@ -1,4 +1,5 @@
-# SRT Injector
+# SRT Injector 
+- This is a fully AI generated Utility for personal use. 
 
 A Chrome extension that lets you attach an external `.srt` subtitle file onto any `<video>` element in your browser — no server, no account, no re-encoding required.
 
